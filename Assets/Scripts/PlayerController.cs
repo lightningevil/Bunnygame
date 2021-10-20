@@ -5,19 +5,23 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 1.0f;
-    
-     Rigidbody2D rigidbody;
-    
+
+    public float jumpForce = 1.0f;
+
+    Rigidbody2D rigidbody;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+
     }
-    
+
+
     private void Update()
     {
         Vector2 f = new Vector2(0, 0);
-        
-        if(Input.GetKey(KeyCode.D))
+
+        if (Input.GetKey(KeyCode.D))
         {
             f = new Vector2(speed, 0);
         }
@@ -25,6 +29,9 @@ public class PlayerController : MonoBehaviour
         {
             f = new Vector2(-speed, 0);
         }
-       rigidbody.AddForce(f);
+
+        rigidbody.AddForce(f);
     }
+
+
 }
